@@ -33,7 +33,7 @@ if prompt := st.chat_input("Write to Sam"):
             ],
             stream=True,
         ):
-            full_response += response.choices[0]
+            full_response += response['choices'][0]['message']['content']
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
