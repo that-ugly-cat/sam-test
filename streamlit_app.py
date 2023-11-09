@@ -11,7 +11,8 @@ openai_api_key = st.secrets["OPENAI_API_KEY"]
 with st.sidebar:
     st.Text("Just an empty sidebar I might use later")
 
-st.title("💬 Talk to Sam") if "messages" not in st.session_state:
+st.title("💬 Talk to Sam") 
+if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
 for msg in st.session_state.messages:
