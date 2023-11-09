@@ -9,7 +9,7 @@ st.title("Sam-test")
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 with st.sidebar:
-    st.Text("Just an empty sidebar I might use later")
+    st.write("Just an empty sidebar I might use later")
 
 st.title("💬 Talk to Sam") 
 if "messages" not in st.session_state:
