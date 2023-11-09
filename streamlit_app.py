@@ -3,7 +3,7 @@ from openai import OpenAI
 import streamlit as st
 client = OpenAI()
 
-st.title("ChatGPT-like clone")
+st.title("Sam-test")
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
@@ -33,7 +33,7 @@ if prompt := st.chat_input("Write to Sam"):
             ],
             stream=True,
         ):
-            full_response += response.choices[0].delta.get("content", "")
+            full_response += response.choices[0]
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
