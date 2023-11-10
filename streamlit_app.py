@@ -24,7 +24,7 @@ if prompt := st.chat_input():
     openai.api_key = openai_api_key
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
-    response = client.chat.completions.create(model="gpt-3.5-turbo", messages=st.session_state.messages, stream = True)
+    response = client.chat.completions.create(model="gpt-3.5-turbo", messages=st.session_state.messages)
     
     msg_role = response.choices[0].message.role
     msg_content = response.choices[0].message.content
