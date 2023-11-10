@@ -13,8 +13,8 @@ with st.sidebar:
 st.title("💬 Talk to Sam") 
 if "messages" not in st.session_state:
     with open('persona.txt') as f:
-    persona = f.read()
-    st.session_state["messages"] = [{"role": "system", "content": persona}, {"role": "assistant", "content": "How can I help you?"}]
+        persona = f.read()
+    st.session_state["messages"] = [{"role": "system", "content": persona}, {"role": "assistant", "content": "Hi, I am Sam."}]
     ##
     st.write(st.session_state["messages"])
     ##
