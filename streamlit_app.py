@@ -13,6 +13,9 @@ with st.sidebar:
 st.title("💬 Talk to Sam") 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
+    ##
+    st.write(st.session_state["messages"])
+    ##
 
 for msg in st.session_state.messages:
     st.chat_message(msg['role']).write(msg['content'])
@@ -31,4 +34,7 @@ if prompt := st.chat_input():
     ##
     msg = response.choices[0].message
     st.session_state.messages.append(msg)
+    ##
+    st.write(st.session_state["messages"])
+    ##
     st.chat_message("assistant").write(msg)
