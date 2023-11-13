@@ -22,6 +22,8 @@ for msg in st.session_state.messages:
 #logic
 if prompt := st.chat_input():
     openai.api_key = openai_api_key
+    prompt_instruction = 'Reflect on the system role before answering. Try to behave as much as possible as the person described in your system role.'
+    prompt = prompt_instruction + ' ' + prompt
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
     response = client.chat.completions.create(model="gpt-3.5-turbo", messages=st.session_state.messages)
