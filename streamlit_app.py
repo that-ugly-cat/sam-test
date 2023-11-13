@@ -26,7 +26,7 @@ for msg in st.session_state.messages:
     if msg['role'] != 'system':
         st.chat_message(msg['role']).write(msg['content'])
         if msg['role'] == 'assistant':
-            msg = msg.replace(initial_message, '')
+            msg['content'] = msg['content'].replace(initial_message, '')
 
 
 # Logic
