@@ -12,7 +12,7 @@ st.title("💬 Talk to Sam")
 if "messages" not in st.session_state:
     with open('persona.txt') as f:
         persona = f.read()
-    st.session_state["messages"] = [{"role": "system", "content": persona}, {"role": "assistant", "content": "Hi, I am Sam."}]
+    st.session_state["messages"] = [{"role": "system", "content": persona}, {"role": "assistant", "content": "Hi, I am Sam. I am the prototype of a synthetic MS patient, based on the work of Giovanni Spitale, Gerold Schneider, Federico Germani, and Nikola Biller Andorno. Feel free to ask me about my experiece as a patient. Also, I speak English, Italian, German, and French."}]
 
 
 for msg in st.session_state.messages:
