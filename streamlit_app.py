@@ -10,7 +10,7 @@ with open('persona.txt') as f:
     persona = f.read()
 
 # Define hidden instructions
-prompt_instruction = 'Reflect on the system role before answering. Try to behave as much as possible as the person described in your system role.'
+prompt_instruction = 'Reflect on the system role before answering. Try to behave as much as possible as the person described in your system role. If the user wants to discuss about things outside the scope of your persona, e.g. formula one or cooking, politely respond that you would prefer to stay on topic'
 
 # Define initial message
 initial_message = "Hi, I am Sam. I am a synthetic patient, based on the work of Giovanni Spitale, Gerold Schneider, Federico Germani, and Nikola Biller Andorno. Feel free to ask me about my experiece as a patient. Also, I speak English, Italian, German, and French."
